@@ -1,17 +1,17 @@
 #pragma once
 #include <raylib.h>
 
-struct CTransform
-{
-    Vector3 position{};
-};
-
-struct CVelocity
+struct Position
 {
     Vector3 value{};
 };
 
-struct CCube
+struct Velocity
+{
+    Vector3 value{};
+};
+
+struct Cube
 {
     Vector3 size{1.f, 1.f, 1.f};
     Color color = RED;

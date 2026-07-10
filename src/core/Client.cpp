@@ -17,9 +17,9 @@ Client::Client()
     m_ctx.camera.projection = CAMERA_PERSPECTIVE;
 
     auto player = m_ctx.registry.create();
-    m_ctx.registry.emplace<CTransform>(player, Vector3{0.f, 0.5f, 0.f});
-    m_ctx.registry.emplace<CVelocity>(player);
-    m_ctx.registry.emplace<CCube>(player);
+    m_ctx.registry.emplace<Position>(player, Vector3{0.f, 0.5f, 0.f});
+    m_ctx.registry.emplace<Velocity>(player);
+    m_ctx.registry.emplace<Cube>(player);
 }
 
 Client::~Client() { CloseWindow(); }

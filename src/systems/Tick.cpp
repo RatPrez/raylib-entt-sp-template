@@ -3,8 +3,8 @@
 
 void System::Tick(WorldContext &ctx)
 {
-    auto view = ctx.registry.view<CTransform, CVelocity>();
-    for (auto [entity, transform, velocity] : view.each()) {
+    auto view = ctx.registry.view<Position, Velocity>();
+    for (auto [entity, position, velocity] : view.each()) {
         velocity.value = {0.f, 0.f, 0.f};
         if (IsKeyDown(KEY_W)) {
             velocity.value.z -= 5.f;
@@ -19,9 +19,9 @@ void System::Tick(WorldContext &ctx)
             velocity.value.x += 5.f;
         }
 
-        transform.position.x += velocity.value.x * ctx.dt;
-        transform.position.y += velocity.value.y * ctx.dt;
-        transform.position.z += velocity.value.z * ctx.dt;
+        position.value.x += velocity.value.x * ctx.dt;
+        position.value.y += velocity.value.y * ctx.dt;
+        position.value.z += velocity.value.z * ctx.dt;
     }
 
     UpdateCamera(&ctx.camera, CAMERA_ORBITAL);
