@@ -21,7 +21,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(entt)
 
-file(GLOB_RECURSE CLIENT_SOURCES src/*.cpp)
+file(GLOB_RECURSE CLIENT_SOURCES CONFIGURE_DEPENDS src/*.cpp)
 
 add_executable(client ${CLIENT_SOURCES})
 
